@@ -103,7 +103,8 @@ input[type='checkbox'] {
 
 .todo {
   display: flex;
-  border-bottom: 1px solid lightgray;
+  max-width: 90%;
+  width: 90%;
 }
 
 .completed {
@@ -117,7 +118,7 @@ input[type='checkbox'] {
   align-items: center;
   max-width: 5%;
   width: 5%;
-  margin: auto 0;
+  margin: auto 10px;
   font-size: 24px;
   color: rgba(175, 47, 47, 0.15);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -145,4 +146,10 @@ input[type='checkbox'] {
   height: 20px;
   font-size: 12px;
   margin: 0 10px;
+}
+
+.all-todo {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  justify-content: space-between;
 }

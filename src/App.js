@@ -56,34 +56,6 @@ class App extends React.Component {
     })
   }
 
-  deleteTodo = e => {
-    console.log(e.target)
-    let todosArray = {...this.state.todos};
-    console.log(todosArray[0].completed)
-    //let index = todosArray.indexOf(e.target.value);
-    // if (index !== -1) {
-    //   todosArray.splice(index, 1);
-    //   this.setState({todos: todosArray});
-    // }
-    // this.setState({
-    //   todos: this.state.todos.splice(e.target.value, 1)
-    // })
-  }
-
-  // toggleComplete = e => {
-    
-  //   let todosArray = {...this.state.todos};
-  //   console.log(e.target.parentNode);
-  //   console.log(todosArray[0]);
-  //   // let index = todosArray.findIndex(todo => todo.e === e);
-  //   // if (todosArray[index].completed === false) {
-  //   //   this.setState({completed: true});
-  //   // } else {
-  //   //   this.setState({completed: false});
-  //   // }
-    
-  // }
-
   toggleTodo = todoId => {
     this.setState({
       todos: this.state.todos.map(todo => {
@@ -95,6 +67,14 @@ class App extends React.Component {
       })
     });
   };
+
+  clearCompleted = e => {
+    e.preventDefault();
+    console.log('running');
+    this.setState({
+      todos: this.state.todos.filter(todo => !todo.completed)
+    });
+  }
   
   render() {
     return (
@@ -105,16 +85,15 @@ class App extends React.Component {
             value={this.state.task}
             addTodo={this.addTodo}
             handleChanges={this.handleChanges}
-            deleteTodo={this.deleteTodo}
             toggleTodo={this.toggleTodo}
           />
           <TodoList 
             todos={this.state.todos}
-            deleteTodo={this.deleteTodo}
             toggleTodo={this.toggleTodo}
           />
           <TodoFooter 
             todos={this.state.todos}
+            clearCompleted={this.clearCompleted}
           />
           {/* <TodoForm 
             value={this.state.task}

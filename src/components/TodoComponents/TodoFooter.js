@@ -9,7 +9,7 @@ const TodoFooter = props => {
         <button>Active</button>
         <button>Completed</button>
       </div>
-      <button>Clear Completed</button>
+      <button onClick={props.clearCompleted} >Clear Completed</button>
     </div>
   );
 }
