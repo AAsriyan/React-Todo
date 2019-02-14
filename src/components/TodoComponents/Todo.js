@@ -4,14 +4,14 @@ const Todo = props => {
   return (
     <div className="all-todo">
       <div 
-        className={`todo${props.todos.completed ? ' completed' : ''}`}
-        onClick={() => props.toggleTodo(props.todos.id)} 
+        className={`todo${props.todos.completed ? ' completed' : ''} ${props.todo}`}
+        onClick={() => props.toggleTodo(props.todos.id)}
       >
-        <input 
+        {/* <input 
           className="toggleCompleted"
           onClick={() => props.toggleTodo(props.todos.id)} 
           type="checkbox"
-        />
+        /> */}
         <h2>{props.todos.task}</h2>
       </div>
       <span className="delete" onClick={props.deleteTodo}>x</span>
