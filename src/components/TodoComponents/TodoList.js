@@ -7,7 +7,14 @@ import Todo from './Todo';
 const TodoList = props => {
   return (
       <div className="todo-list">
-        {props.todos.map((todo, index) => <Todo key={index} todos={todo}/>)}
+        {props.todos.map((todo, index) => {
+          return (<Todo 
+            toggleTodo={props.toggleTodo} 
+            deleteTodo={props.deleteTodo}
+            key={index} 
+            todos={todo}
+          />);
+        })}
       </div>
   );
 }
