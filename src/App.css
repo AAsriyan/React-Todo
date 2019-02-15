@@ -105,10 +105,11 @@ input[type='checkbox'] {
   display: flex;
   max-width: 90%;
   width: 90%;
+  cursor: pointer;
 }
 
 .completed {
-  color: #d9d9d9;
+  color: #d69f9f;
   text-decoration: line-through;
 }
 

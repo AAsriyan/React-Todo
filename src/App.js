@@ -85,13 +85,7 @@ class App extends React.Component {
     console.log(e.target.parentNode);
     console.log(e.target.parentNode.parentNode);
     console.log(e.target.parentNode.parentNode.parentNode);
-    this.setState({
-      todos: this.state.todos.map(todo => {
-        if (index) {
-          return [...this.state.todos].splice(index, 1);
-        } 
-      })
-    });
+    this.setState
   }
 
   showAll = e => {

@@ -10,8 +10,9 @@ const TodoAdd = props => {
         onChange={props.handleChanges}
         name="task"
         placeholder="What needs to be done?"
+        required
       />
-      <button type="submit" onClick={props.addTodo}>Add Todo</button>
+      <button type="submit">Add Todo</button>
     </form>
   );
 }
